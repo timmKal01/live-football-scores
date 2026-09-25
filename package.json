@@ -1,0 +1,16 @@
+{
+    "name": "live-football-scores",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "Live and final scores, goals and half-time results for the Bundesliga, Champions League, Europa League, Premier League, La Liga and German hockey, from OpenLigaDB open data (ODbL).",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "apify": "^3.2.6"
+    },
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "node --test"
+    }
+}

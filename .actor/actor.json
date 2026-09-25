@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "live-football-scores",
+    "title": "Live Football Scores: Bundesliga, Champions League & More",
+    "description": "Live and final scores, goal scorers and half-time results for the Bundesliga, Champions League, Europa League, DFB-Pokal, Premier League, LaLiga and German ice hockey. Open data from OpenLigaDB (ODbL), with a monitor mode for goal alerts.",
+    "version": "0.1",
+    "meta": {
+        "templateId": "custom-no-proxy"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "dockerfile": "../Dockerfile"
+}

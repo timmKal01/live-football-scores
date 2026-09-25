@@ -1,0 +1,84 @@
+{
+    "title": "Live Football Scores Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "leagues": {
+            "title": "Competitions",
+            "type": "array",
+            "editor": "select",
+            "description": "Which competitions to return. Premier League and LaLiga are volunteer-maintained and recent results can arrive days late; the German leagues, European cups and hockey are kept fully up to date.",
+            "items": {
+                "type": "string",
+                "enum": ["bl1", "bl2", "bl3", "dfb", "ucl", "uel", "epl", "laliga", "frauen-bl", "del", "chl"],
+                "enumTitles": ["1. Bundesliga", "2. Bundesliga", "3. Liga", "DFB-Pokal", "UEFA Champions League", "UEFA Europa League", "Premier League", "LaLiga", "Frauen-Bundesliga", "DEL (ice hockey)", "Champions Hockey League"]
+            },
+            "default": ["bl1", "bl2", "ucl"],
+            "prefill": ["bl1", "bl2", "ucl"]
+        },
+        "range": {
+            "title": "Which matches",
+            "type": "string",
+            "editor": "select",
+            "enum": ["current_round", "live", "today", "yesterday", "tomorrow", "last_7_days", "next_7_days", "custom"],
+            "enumTitles": ["Current round / matchday", "Live now", "Today (UTC)", "Yesterday (UTC)", "Tomorrow (UTC)", "Last 7 days", "Next 7 days", "Custom dates"],
+            "default": "current_round",
+            "prefill": "current_round",
+            "description": "\"Live now\" returns only matches in progress, and is empty when nothing is being played."
+        },
+        "dateFrom": {
+            "title": "From date (custom)",
+            "type": "string",
+            "editor": "datepicker",
+            "description": "YYYY-MM-DD, UTC. Used when \"Which matches\" is Custom dates."
+        },
+        "dateTo": {
+            "title": "To date (custom)",
+            "type": "string",
+            "editor": "datepicker",
+            "description": "YYYY-MM-DD, UTC, inclusive."
+        },
+        "statuses": {
+            "title": "Match status",
+            "type": "array",
+            "editor": "select",
+            "description": "Keep only matches in these states. All by default.",
+            "items": {
+                "type": "string",
+                "enum": ["scheduled", "live", "finished", "result_pending"],
+                "enumTitles": ["Scheduled", "Live", "Finished", "Result not entered yet"]
+            }
+        },
+        "team": {
+            "title": "Team filter",
+            "type": "string",
+            "editor": "textfield",
+            "description": "Only matches involving a team whose name contains this text, e.g. \"Bayern\" or \"Dortmund\"."
+        },
+        "mode": {
+            "title": "Mode",
+            "type": "string",
+            "editor": "select",
+            "enum": ["snapshot", "monitor"],
+            "enumTitles": ["Snapshot: every matching match", "Monitor: only matches whose score or status changed since the last run"],
+            "default": "snapshot",
+            "description": "Schedule monitor mode during match days to get goal and full-time alerts."
+        },
+        "monitorStoreName": {
+            "title": "Monitor memory name",
+            "type": "string",
+            "editor": "textfield",
+            "description": "Key-value store that holds the previous scores. Use a different name for each separate monitor.",
+            "default": "live-football-scores-monitor"
+        },
+        "maxMatches": {
+            "title": "Max matches",
+            "type": "integer",
+            "editor": "number",
+            "default": 500,
+            "minimum": 1,
+            "maximum": 5000,
+            "description": "Stop after this many matches, earliest kickoff first."
+        }
+    }
+}
