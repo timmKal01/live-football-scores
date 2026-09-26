@@ -1,0 +1,73 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "leagueName",
+                    "round",
+                    "kickoffUtc",
+                    "status",
+                    "homeTeam",
+                    "homeScore",
+                    "awayScore",
+                    "awayTeam",
+                    "halfTimeHomeScore",
+                    "halfTimeAwayScore",
+                    "minutesSinceKickoff"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "leagueName": {
+                        "label": "League name",
+                        "format": "text"
+                    },
+                    "round": {
+                        "label": "Round",
+                        "format": "text"
+                    },
+                    "kickoffUtc": {
+                        "label": "Kickoff utc",
+                        "format": "date"
+                    },
+                    "status": {
+                        "label": "Status",
+                        "format": "text"
+                    },
+                    "homeTeam": {
+                        "label": "Home team",
+                        "format": "text"
+                    },
+                    "homeScore": {
+                        "label": "Home score",
+                        "format": "number"
+                    },
+                    "awayScore": {
+                        "label": "Away score",
+                        "format": "number"
+                    },
+                    "awayTeam": {
+                        "label": "Away team",
+                        "format": "text"
+                    },
+                    "halfTimeHomeScore": {
+                        "label": "Half time home score",
+                        "format": "number"
+                    },
+                    "halfTimeAwayScore": {
+                        "label": "Half time away score",
+                        "format": "number"
+                    },
+                    "minutesSinceKickoff": {
+                        "label": "Minutes since kickoff",
+                        "format": "number"
+                    }
+                }
+            }
+        }
+    }
+}
