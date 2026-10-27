@@ -99,7 +99,7 @@ if (mode === 'monitor') {
     rows = changed;
 }
 
-await Actor.pushData(rows);
+await Actor.pushData(rows.map((row) => ({ rowType: 'match', ...row })));
 log.info(`Returned ${rows.length} match(es).`, {
     live: rows.filter((r) => r.status === 'live').length,
     resultPending: rows.filter((r) => r.status === 'result_pending').length,

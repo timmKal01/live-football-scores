@@ -15,6 +15,7 @@ The data comes from [OpenLigaDB](https://www.openligadb.de), a community-run ope
 
 ```json
 {
+  "rowType": "match",
   "matchId": 87388,
   "league": "ucl",
   "leagueName": "Champions League 2026/2027",
@@ -91,6 +92,7 @@ Set `mode` to `monitor` with `range: "live"` or `"today"`, and schedule it durin
 
 ```json
 {
+  "rowType": "match",
   "matchId": 83190,
   "status": "live",
   "homeScore": 2,
